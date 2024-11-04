@@ -114,14 +114,13 @@
       set fish_greeting # Disable greeting
     '';
     shellAliases = {
+      hms = "home-manager switch --flake .#arian";
+
       ll = "eza -l -g --icons";
       lla = "ll -a";
+
       k = "kubectl";
     };
-    plugins = [
-      # Example: Adding the 'grc' plugin from nixpkgs for colorized output
-      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
-    ];
   };
 
   # starship
