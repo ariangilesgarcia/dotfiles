@@ -35,7 +35,7 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
 
-    # fish shell & plugins
+    # terminal: fish shell & plugins
     pkgs.fish
     pkgs.fishPlugins.z
     pkgs.fishPlugins.fzf
@@ -148,6 +148,10 @@
   # zellij
   programs.zellij = {
     enable = true;
+    enableFishIntegration = true;
+    settings = {
+
+    };
   };
 
   # Allow specific unfree packages
