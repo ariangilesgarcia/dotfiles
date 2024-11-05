@@ -4,7 +4,7 @@
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "arian";
-  home.homeDirectory = "/home/arian";
+  home.homeDirectory = if pkgs.stdenv.isDarwin then "/Users/arian" else "/home/arian";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -44,7 +44,7 @@
 
     pkgs.starship
     pkgs.eza
-    
+
     # kubernetes & docker
     pkgs.k9s
 
@@ -155,7 +155,7 @@
   };
 
   # Allow specific unfree packages
-  # nixpkgs.config.allowUnfreePredicate = 
+  # nixpkgs.config.allowUnfreePredicate =
   #   pkg: builtins.elem(pkgs.lib.getName pkg) [
   #     "discord"
   #   ];
