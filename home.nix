@@ -116,7 +116,8 @@
       set fish_greeting # Disable greeting
     '';
     shellAliases = {
-      hms = "home-manager switch --flake .#arian";
+      hms-linux = "home-manager switch --flake .#arian-linux";
+      hms-macos = "home-manager switch --flake .#arian-macos";
 
       ll = "eza -l -g --icons";
       lla = "ll -a";
