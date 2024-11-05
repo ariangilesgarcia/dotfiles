@@ -40,6 +40,8 @@
     pkgs.fishPlugins.z
     pkgs.fishPlugins.fzf
 
+    pkgs.zellij
+
     pkgs.starship
     pkgs.eza
     
@@ -141,6 +143,11 @@
         disabled = true;
       };
     };
+  };
+
+  # zellij
+  programs.zellij = {
+    enable = true;
   };
 
   # Allow specific unfree packages
