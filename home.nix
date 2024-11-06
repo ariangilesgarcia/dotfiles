@@ -176,6 +176,12 @@
     };
   };
 
+  # pynev
+  programs.pyenv = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
   # Allow specific unfree packages
   nixpkgs.config.allowUnfreePredicate =
     pkg: builtins.elem(pkgs.lib.getName pkg) [
