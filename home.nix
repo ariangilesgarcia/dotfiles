@@ -37,16 +37,19 @@
 
     # terminal: fish shell & plugins
     pkgs.fish
-    pkgs.fishPlugins.z
     pkgs.fishPlugins.fzf
 
     pkgs.zellij
 
     pkgs.starship
     pkgs.eza
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.zoxide
 
     # kubernetes & docker
     pkgs.k9s
+    pkgs.helm
 
     # git & github
     pkgs.gh
@@ -54,6 +57,24 @@
     # python development
     pkgs.pyenv
     pkgs.poetry
+    pkgs.black
+
+    # tools
+    pkgs.btop
+    pkgs.viu
+    pkgs.direnv
+    pkgs.jq 
+    pkgs.curl
+    pkgs.wget
+    pkgs.lazygit
+
+    # data
+    pkgs.duckdb
+    pkgs.postgresql
+    pkgs.dbeaver-bin
+
+    # editor
+    pkgs.vscode
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -156,8 +177,8 @@
   };
 
   # Allow specific unfree packages
-  # nixpkgs.config.allowUnfreePredicate =
-  #   pkg: builtins.elem(pkgs.lib.getName pkg) [
-  #     "discord"
-  #   ];
+  nixpkgs.config.allowUnfreePredicate =
+    pkg: builtins.elem(pkgs.lib.getName pkg) [
+      "vscode"
+    ];
 }
